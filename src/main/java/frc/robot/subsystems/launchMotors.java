@@ -15,8 +15,8 @@ public class launchMotors extends SubsystemBase {
   /**
    * Creates a new launchMotors.
    */
-  Victor motor1;
-  Victor motor2;
+  private Victor motor1;
+  private Victor motor2;
   public launchMotors() 
   {
     motor1 = new Victor(Constants.launchMotor1);
