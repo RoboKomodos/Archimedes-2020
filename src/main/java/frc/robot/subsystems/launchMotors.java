@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class launchMotors extends SubsystemBase {
   /**
@@ -18,29 +19,33 @@ public class launchMotors extends SubsystemBase {
   Victor motor2;
   public launchMotors() 
   {
-    motor1 = new Victor(1);
-    motor2 = new Victor(2);
+    motor1 = new Victor(Constants.launchMotor1);
+    motor2 = new Victor(Constants.launchMotor2);
   }
-  public void startmotah()
+  public void startLaunchMotor()
   {
-    motor1.setSpeed(0.4);
-    motor2.setSpeed(0.4);
+    motor1.setSpeed(Constants.launchMotorSpeed);
+    motor2.setSpeed(Constants.launchMotorSpeed);
   }
-  public void stopmotah()
+
+  public void stopLaunchMotor()
   {
     motor1.setSpeed(0.0);
     motor2.setSpeed(0.0);
   }
-  public void aredatmotahson()
+  /**
+   * Toggles motors on or off based on if they are already spinning
+   */
+  public void areTheMotorsOn()
   {
-    double checkmotah1 = motor1.getSpeed();
-    if(checkmotah1==0.0)
+    double checkMotor1 = motor1.getSpeed();
+    if(checkMotor1==0.0)
     {
-      startmotah();
+      startLaunchMotor();
     }
     else
     {
-      stopmotah();
+      stopLaunchMotor();
     }
   }
 

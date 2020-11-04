@@ -47,7 +47,7 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(xbox, Button.kY.value).whenPressed(new InstantCommand(m_launch::aredatmotahson, m_launch));
+    new JoystickButton(xbox, Button.kY.value).whenPressed(new InstantCommand(m_launch::areTheMotorsOn, m_launch));
 
   }
 
